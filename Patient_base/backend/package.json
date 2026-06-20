@@ -1,0 +1,27 @@
+{
+  "name": "vortexa-backend",
+  "version": "1.0.0",
+  "description": "Patient-Sovereign Prescription Intelligence Backend — Hono + Bun + Supabase/Drizzle",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot src/server.ts",
+    "start": "bun run src/server.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "bun run run-migrate.ts",
+    "db:studio": "drizzle-kit studio",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.0",
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.6.3",
+    "openai": "^4.52.7",
+    "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.31.10",
+    "typescript": "^5.5.3"
+  }
+}
