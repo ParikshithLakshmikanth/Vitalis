@@ -17,3 +17,21 @@ export interface Handoff {
 
   share_status: string;
 }
+
+export interface ClinicalSynthesis {
+  allergies: string[];
+  current_conditions: string[];
+  pending_lab_tests: string[];
+  high_risk_medications: string[];
+  clinical_summary: string;
+}
+
+export interface AuditEntry {
+  timestamp: string;
+  event: string;
+  actor: string;
+  fileId: string;
+  details: string;
+  prevHash: string;
+  entryHash: string;
+}
