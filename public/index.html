@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AXION Healthcare UI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <h1>AXION</h1>
+          <p>Healthcare backend UI</p>
+        </div>
+        <nav>
+          <a href="#health">Health</a>
+          <a href="#blackbox">Black Box</a>
+          <a href="#mrv">MRV</a>
+          <a href="#examples">Examples</a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="hero">
+          <div>
+            <p class="eyebrow">AXION Core</p>
+            <h2>Complete frontend for the API endpoints</h2>
+            <p>Use this UI to validate server health, trigger Black Box processing, and verify medical reasoning.</p>
+          </div>
+        </header>
+
+        <section id="health" class="panel">
+          <div class="panel-header">
+            <div>
+              <h3>Health check</h3>
+              <p>Confirm the backend is alive and responding.</p>
+            </div>
+            <button id="healthBtn" class="primary">Run health check</button>
+          </div>
+          <pre id="healthResult" class="result">No health check executed yet.</pre>
+        </section>
+
+        <section id="blackbox" class="panel">
+          <div class="panel-header">
+            <div>
+              <h3>Black Box trigger</h3>
+              <p>Submit an AdverseEvent payload and create a case.</p>
+            </div>
+            <div class="button-row">
+              <button id="blackboxBtn" class="primary">Trigger Black Box</button>
+              <button id="blackboxGetBtn" class="secondary">Fetch case by event_id</button>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div>
+              <label for="blackboxPayload">Request payload</label>
+              <textarea id="blackboxPayload"></textarea>
+            </div>
+            <div>
+              <label for="blackboxEventId">Fetch case by event_id</label>
+              <input id="blackboxEventId" placeholder="Enter event_id" />
+            </div>
+          </div>
+
+          <pre id="blackboxResult" class="result">Results will appear here.</pre>
+        </section>
+
+        <section id="mrv" class="panel">
+          <div class="panel-header">
+            <div>
+              <h3>Medical Reasoning Verification</h3>
+              <p>Submit a verification request or retrieve an existing result.</p>
+            </div>
+            <div class="button-row">
+              <button id="mrvBtn" class="primary">Send verify request</button>
+              <button id="mrvGetBtn" class="secondary">Fetch result by request_id</button>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div>
+              <label for="mrvPayload">Request payload</label>
+              <textarea id="mrvPayload"></textarea>
+            </div>
+            <div>
+              <label for="mrvRequestId">Fetch result by request_id</label>
+              <input id="mrvRequestId" placeholder="Enter request_id" />
+            </div>
+          </div>
+
+          <pre id="mrvResult" class="result">Results will appear here.</pre>
+        </section>
+
+        <section id="examples" class="panel small-panel">
+          <h3>Usage notes</h3>
+          <ul>
+            <li>The homepage route <code>/</code> now returns this UI.</li>
+            <li>Use the sample JSON payloads and adjust identifiers before sending.</li>
+            <li>Retrieve created cases by event_id or verification results by request_id.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
